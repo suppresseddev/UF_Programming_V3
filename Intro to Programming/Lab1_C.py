@@ -64,6 +64,22 @@ def diffInDays(year1, month1, day1, year2, month2, day2):
 
 #diffInDays(2005,1,12,2003,12,15)
 
-diffInDays(1999,12,30,2000,1,1)
+# diffInDays(1999,12,30,2000,1,1)
+#
+# diffInDays(2004, 1, 16,2024,5,17)
 
-diffInDays(2004, 1, 16,2024,5,17)
+def dumbDayDiff (year1, month1, day1, year2, month2, day2):
+    print(f"Enter the year for date 1: {year1}")
+    print(f"Enter the month for date 1: {month1}")
+    print(f"Enter the day for date 1: {day1}")
+    print(f"Enter the year for date 2: {year2}")
+    print(f"Enter the month for date 2: {month2}")
+    print(f"Enter the day for date 2: {day2}")
+    date1 = (year1*360+month1*30+day1)
+    date2 = (year2*360+month2*30+day2)
+    timebetween = max(date1, date2) - min(date1, date2)
+    print(f"The difference betweeen {month1}/{day1}/{year1} and {month2}/{day2}/{year2} is {timebetween} day(s)!")
+
+dumbDayDiff (1999, 12, 30, 2000, 1, 1)
+
+dumbDayDiff(2004, 1, 16, 2024, 5, 17)
