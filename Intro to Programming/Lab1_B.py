@@ -29,11 +29,11 @@
 # Enter the sales tax percentage: 3.4
 # Your total is $1333.06
 
-def addTax(price, taxrate):
-    print(f"Enter the price of the item: {price}")
-    print(f"Enter the sales tax percentage: {taxrate}")
+def addTax():
+    price = float(input(f"Enter the price of the item: "))
+    taxrate = float(input(f"Enter the sales tax percentage: "))
     total = float(price) * (1.00+(float(taxrate)/100.00))
     total = round(total, 2)
     print(f"Your total is ${total:.2f}")
 
-addTax(120, 14.5)
+addTax()

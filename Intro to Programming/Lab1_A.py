@@ -18,11 +18,10 @@
 # Enter the temperature in Celsius: 0
 # That is 32.0 degrees Fahrenheit!
 
-def tempToF(temp_c):
-    print(f"Enter the temperature in Celsius: {temp_c}")
+def tempToF():
+    temp_c = float(input(f"Enter the temperature in Celsius: "))
     temp_f = temp_c * 9/5 + 32
     temp_f = round(temp_f, 1)
     print(f"That is {temp_f} degrees Fahrenheit!")
     print()
-tempToF(-20)
-tempToF(40.4)
+tempToF()
