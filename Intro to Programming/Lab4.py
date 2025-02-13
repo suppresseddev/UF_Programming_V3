@@ -28,10 +28,19 @@ def print_prime_factors(n):
             if n % i == 0:
                 prime_factors.append(i)
     prime_factors.sort()
-    prime_multiples = []
-    for t, factor in enumerate(prime_factors):
-        for k in prime_factors:
-            if (k * factor) not in prime_multiples:
-                prime_multiples.append(k * factor)
-    print(prime_multiples)
-print_prime_factors(2475)
+    # prime_multiples = []
+    # for t, factor in enumerate(prime_factors):
+    #     for k in prime_factors:
+    #         if (k * factor) not in prime_multiples:
+    #             prime_multiples.append(k * factor)
+    solution = []
+    u = n
+    for k in prime_factors:
+        while u % k == 0:
+            solution.append(k)
+            u = u // k
+    answer = f"{n} = "
+    for t in solution:
+        answer += str(t) + " * "
+    answer = answer[:-3]
+    print(answer)
