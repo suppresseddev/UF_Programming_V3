@@ -76,12 +76,6 @@ def main():
     global debug
     #First generate the board.
     r = input("What would you like the height of the board to be?")
-    if r == "test_initialization":
-        exit()
-    if r == "test_check_winner_true":
-        exit()
-    if r == "test_check_winner_false":
-        exit()
     r = int(r)
     c = int(input("What would you like the length of the board to be?"))
     game = genGame(r,c)
