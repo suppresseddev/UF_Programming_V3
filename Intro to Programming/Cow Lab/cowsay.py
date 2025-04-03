@@ -2,17 +2,14 @@ import sys
 
 #I don't understand the use for this file.
 #It SEEMS to be intended to create the default cows, but I can do that myself, y'know? No foul?
+#UPDATE: We have to use it I think, so I'm just gonna let it try, okay amigos?
 import heifer_generator as hg
+hg.get_cows()
 
 from cow import *
 
 #Forcing students to do over-restricted programming to simulate OOP in Python, is crazy.
 
-#Doing what heifer_generator.py does, but myself.
-Heifer = Cow("heifer")
-Heifer.set_image(0)
-Kitteh = Cow("kitteh")
-Kitteh.set_image(1)
 #Differnt potential outputs are these next functions.
 def list_cows():
     #This will probably use the cow() class, so ignore it for now.
@@ -21,12 +18,24 @@ def list_cows():
     print(k)
 def cow_message(msg, cow = None):
     #This will print the message from the cow. Yes this is stupid.
+
     if cow == None:
+        cow = Cow.get_cow('heifer')
         print(msg)
-        print(Cow.quote_lines + Cow.cow_images[0])
+        print(cow.image)
     else:
         print(msg)
         print(cow.image)
+        # Try checking if its a dragon, if it is, then make a message after the image about the fire.
+        try:
+            if cow.can_breath_fire():
+                print("This dragon can breathe fire.")
+            else:
+                print("This dragon cannot breathe fire.")
+        except:
+            pass
+
+
 #Idk if main() is needed here.
 # def main():
     #Our teachers are weird.
@@ -79,4 +88,4 @@ else:
 if msg == "":
     exit()
 else:
-    cow_message(msg[:-1], cow = cow)
+    cow_message(msg, cow = cow)
